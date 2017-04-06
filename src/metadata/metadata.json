@@ -1,0 +1,3565 @@
+{
+    "package": "Trello",
+    "tagline": "Get data and update tasks on this project management app.",
+    "description": "Connect to the Trello Project Management API to get data and update tasks on this project management app. Test an API call and export the code into your app.",
+    "image": "https://logo.clearbit.com/trello.com?s=128",
+    "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-Trello-Package",
+    "keywords": [
+        "API",
+        "business",
+        "data",
+        "enterprise",
+        "listing",
+        "management",
+        "project",
+        "task"
+    ],
+    "accounts": {
+        "domain": "trello.com",
+        "credentials": [
+            "apiKeys"
+        ]
+    },
+    "blocks": [
+        {
+            "name": "getToken",
+            "description": "Find a token by identifier.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "tokenId",
+                    "type": "String",
+                    "info": "The token's identifier.",
+                    "required": true
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of fields for fetching. One of: all, dateCreated, dateExpires, idMember, identifier, permissions.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "deleteToken",
+            "description": "Remove a token.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "tokenId",
+                    "type": "String",
+                    "info": "The token's identifier.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getTokenMember",
+            "description": "Get a given token member.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "tokenId",
+                    "type": "String",
+                    "info": "The token's identifier.",
+                    "required": true
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of fields for fetching. One of: all, avatarHash, avatarSource, bio, bioData, confirmed, email, fullName, gravatarHash, idBoards, idBoardsPinned, idOrganizations, idPremOrgsAdmin, initials, loginTypes, memberType, oneTimeMessagesDismissed, prefs, premiumFeatures, products, status, status, trophies, uploadedAvatarHash, url, username.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getTokenWebhooks",
+            "description": "Get a given token webhooks.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "tokenId",
+                    "type": "String",
+                    "info": "The token's identifier.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getTokenSingleWebhook",
+            "description": "Get a given token single webhook by identifier.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "tokenId",
+                    "type": "String",
+                    "info": "The token's identifier.",
+                    "required": true
+                },
+                {
+                    "name": "idWebhook",
+                    "type": "String",
+                    "info": "The identifier of the webhook.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "createTokenWebhook",
+            "description": "Create a given token webhook.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "tokenId",
+                    "type": "String",
+                    "info": "The token's identifier.",
+                    "required": true
+                },
+                {
+                    "name": "callbackURL",
+                    "type": "String",
+                    "info": "A valid URL that is reachable with a HEAD request.",
+                    "required": true
+                },
+                {
+                    "name": "idModel",
+                    "type": "String",
+                    "info": "Identifier of the model to be monitored.",
+                    "required": true
+                },
+                {
+                    "name": "description",
+                    "type": "String",
+                    "info": "Description of webhook.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateTokenWebhook",
+            "description": "Update a given token webhook.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "tokenId",
+                    "type": "String",
+                    "info": "The token's identifier.",
+                    "required": true
+                },
+                {
+                    "name": "callbackURL",
+                    "type": "String",
+                    "info": "A valid URL that is reachable with a HEAD request.",
+                    "required": true
+                },
+                {
+                    "name": "idModel",
+                    "type": "String",
+                    "info": "Identifier of the model to be monitored.",
+                    "required": true
+                },
+                {
+                    "name": "description",
+                    "type": "String",
+                    "info": "Description of webhook.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "removeTokenWebhook",
+            "description": "Remove a given token single webhook by identifier.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "tokenId",
+                    "type": "String",
+                    "info": "The token's identifier.",
+                    "required": true
+                },
+                {
+                    "name": "idWebhook",
+                    "type": "String",
+                    "info": "The identifier of the webhook.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getWebhook",
+            "description": "Get single webhook by identifier.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "idWebhook",
+                    "type": "String",
+                    "info": "The identifier of the webhook.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "createWebhook",
+            "description": "Create a webhook.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "callbackURL",
+                    "type": "String",
+                    "info": "A valid URL that is reachable with a HEAD request.",
+                    "required": true
+                },
+                {
+                    "name": "idModel",
+                    "type": "String",
+                    "info": "Identifier of the model to be monitored.",
+                    "required": true
+                },
+                {
+                    "name": "description",
+                    "type": "String",
+                    "info": "Description of webhook.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateWebhook",
+            "description": "Update a webhook.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "idWebhook",
+                    "type": "String",
+                    "info": "The identifier of the webhook.",
+                    "required": true
+                },
+                {
+                    "name": "callbackURL",
+                    "type": "String",
+                    "info": "A valid URL that is reachable with a HEAD request.",
+                    "required": true
+                },
+                {
+                    "name": "idModel",
+                    "type": "String",
+                    "info": "Identifier of the model to be monitored.",
+                    "required": true
+                },
+                {
+                    "name": "description",
+                    "type": "String",
+                    "info": "Description of webhook.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "deleteWebhook",
+            "description": "Delete a webhook.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "idWebhook",
+                    "type": "String",
+                    "info": "The identifier of the webhook.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getType",
+            "description": "Get type of team or user.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "teamOrUserId",
+                    "type": "String",
+                    "info": "Team or user identifier.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getBoard",
+            "description": "Get board by identifier.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "actions",
+                    "type": "String",
+                    "info": "Comma-separated list of actions. One of: all, addAttachmentToCard, addChecklistToCard, addMemberToBoard, addMemberToCard, addMemberToOrganization, addToOrganizationBoard, commentCard, convertToCardFromCheckItem, copyBoard, copyCard, copyCommentCard, createBoard, createCard, createList, createOrganization, deleteAttachmentFromCard, deleteBoardInvitation, deleteCard, deleteOrganizationInvitation, disablePowerUp, emailCard, enablePowerUp, makeAdminOfBoard, makeNormalMemberOfBoard, makeNormalMemberOfOrganization, makeObserverOfBoard, memberJoinedTrello, moveCardFromBoard, moveCardToBoard, moveListFromBoard, moveListToBoard, removeChecklistFromCard, removeFromOrganizationBoard, removeMemberFromCard, unconfirmedBoardInvitation, unconfirmedOrganizationInvitation, updateBoard, updateCard, updateCard:closed, updateCard:desc, updateCard:idList, updateCard:name, updateCheckItemStateOnCard, updateChecklist, updateList, updateList:closed, updateList:name, updateMember, updateOrganization.",
+                    "required": false
+                },
+                {
+                    "name": "actionsEntities",
+                    "type": "Boolean",
+                    "info": "Actions entities. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "actionsDisplay",
+                    "type": "Boolean",
+                    "info": "Display actions. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "actionsFormat",
+                    "type": "String",
+                    "info": "One of actions format. One of: count, list, minimal.",
+                    "required": false
+                },
+                {
+                    "name": "actionsSince",
+                    "type": "String",
+                    "info": "One of actions since. One of: date, null, lastView.",
+                    "required": false
+                },
+                {
+                    "name": "actionsLimit",
+                    "type": "String",
+                    "info": "Actions limit. One of: number from 0 to 1000.",
+                    "required": false
+                },
+                {
+                    "name": "actionFields",
+                    "type": "String",
+                    "info": "Comma-separated list of action fields. One of: all, data, date, idMemberCreator, type.",
+                    "required": false
+                },
+                {
+                    "name": "actionMember",
+                    "type": "Boolean",
+                    "info": "Action member. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "actionMemberFields",
+                    "type": "String",
+                    "info": "Comma-separated list of action member fields. One of: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                },
+                {
+                    "name": "actionMemberCreator",
+                    "type": "Boolean",
+                    "info": "Action member creator. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "actionMemberCreatorFields",
+                    "type": "String",
+                    "info": "Comma-separated list of action member creator fields. One of: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                },
+                {
+                    "name": "cards",
+                    "type": "String",
+                    "info": "Type of cards. One of: all, closed, none, open, visible.",
+                    "required": false
+                },
+                {
+                    "name": "cardFields",
+                    "type": "String",
+                    "info": "Comma-separated list of card fields. One of: all, badges, checkItemStates, closed, dateLastActivity, desc, descData, due, email, idAttachmentCover, idBoard, idChecklists, idLabels, idList, idMembers, idMembersVoted, idShort, labels, manualCoverAttachment, name, pos, shortLink, shortUrl, subscribed, url.",
+                    "required": false
+                },
+                {
+                    "name": "cardAttachments",
+                    "type": "String",
+                    "info": "Type of card attachments. One of: false, cover.",
+                    "required": false
+                },
+                {
+                    "name": "cardAttachmentFields",
+                    "type": "String",
+                    "info": "Comma-separated list of card attachment fields. One of: all, bytes, date, edgeColor, idMember, isUpload, mimeType, name, previews, url.",
+                    "required": false
+                },
+                {
+                    "name": "cardChecklists",
+                    "type": "String",
+                    "info": "Card checklists. One of: all, none.",
+                    "required": false
+                },
+                {
+                    "name": "cardPluginData",
+                    "type": "Boolean",
+                    "info": "Card pluginData. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "cardStickers",
+                    "type": "Boolean",
+                    "info": "Card stickers. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "boardStars",
+                    "type": "String",
+                    "info": "Type of board stars. One of: mine, none.",
+                    "required": false
+                },
+                {
+                    "name": "labels",
+                    "type": "String",
+                    "info": "Type of labels. One of: all, none.",
+                    "required": false
+                },
+                {
+                    "name": "labelFields",
+                    "type": "String",
+                    "info": "Comma-separated list of label fields. One of: color, idBoard, name, uses.",
+                    "required": false
+                },
+                {
+                    "name": "labelsLimit",
+                    "type": "String",
+                    "info": "Labels limit. One of: number from 0 to 1000.",
+                    "required": false
+                },
+                {
+                    "name": "lists",
+                    "type": "String",
+                    "info": "Type of lists. One of: all, closed, none, open.",
+                    "required": false
+                },
+                {
+                    "name": "listFields",
+                    "type": "String",
+                    "info": "Comma-separated list of list fields. One of: all, closed, idBoard, name, pos, subscribed.",
+                    "required": false
+                },
+                {
+                    "name": "memberships",
+                    "type": "String",
+                    "info": "Comma-separated list of memberships. One of: none, active, admin, deactivated, me, normal.",
+                    "required": false
+                },
+                {
+                    "name": "membershipsMember",
+                    "type": "Boolean",
+                    "info": "Memberships member. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "membershipsMemberFields",
+                    "type": "String",
+                    "info": "Comma-separated list of memberships member fields. One of: avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                },
+                {
+                    "name": "members",
+                    "type": "String",
+                    "info": "Type of members. One of: admins, all, none, normal, owners.",
+                    "required": false
+                },
+                {
+                    "name": "memberFields",
+                    "type": "String",
+                    "info": "Comma-separated list of member fields. One of: avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                },
+                {
+                    "name": "membersInvited",
+                    "type": "String",
+                    "info": "Type of members invited. One of: admins, all, none, normal, owners.",
+                    "required": false
+                },
+                {
+                    "name": "membersInvitedFields",
+                    "type": "String",
+                    "info": "Comma-separated list of members invited fields. One of: avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                },
+                {
+                    "name": "pluginData",
+                    "type": "Boolean",
+                    "info": "Plugin data. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "checklists",
+                    "type": "String",
+                    "info": "Type of checklists. One of: all, none.",
+                    "required": false
+                },
+                {
+                    "name": "checklistFields",
+                    "type": "String",
+                    "info": "Type of checklist fields. One of: idBoard, idCard, name, pos.",
+                    "required": false
+                },
+                {
+                    "name": "organization",
+                    "type": "Boolean",
+                    "info": "Organization. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "organizationFields",
+                    "type": "String",
+                    "info": "Comma-separated list of organization fields. One of: billableMemberCount, desc, descData, displayName, idBoards, invitations, invited, logoHash, memberships, name, powerUps, prefs, premiumFeatures, products, url, website.",
+                    "required": false
+                },
+                {
+                    "name": "organizationMemberships",
+                    "type": "String",
+                    "info": "Type of organization memberships. One of: none, active, admin, deactivated, me, normal.",
+                    "required": false
+                },
+                {
+                    "name": "organizationPluginData",
+                    "type": "String",
+                    "info": "Organization plugin data. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "myPrefs",
+                    "type": "Boolean",
+                    "info": "My prefs. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "tags",
+                    "type": "Boolean",
+                    "info": "Tags. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of fields. One of: closed, dateLastActivity, dateLastView, desc, descData, idOrganization, invitations, invited, labelNames, memberships, name, pinned, powerUps, prefs, shortLink, shortUrl, starred, subscribed, url.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getBoardActions",
+            "description": "Get single board actions.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "entities",
+                    "type": "Boolean",
+                    "info": "Actions entities. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "display",
+                    "type": "Boolean",
+                    "info": "Display actions. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "filter",
+                    "type": "String",
+                    "info": "Comma-separated list of actions type. One of: all, addAttachmentToCard, addChecklistToCard, addMemberToBoard, addMemberToCard, addMemberToOrganization, addToOrganizationBoard, commentCard, convertToCardFromCheckItem, copyBoard, copyCard, copyCommentCard, createBoard, createCard, createList, createOrganization, deleteAttachmentFromCard, deleteBoardInvitation, deleteCard, deleteOrganizationInvitation, disablePowerUp, emailCard, enablePowerUp, makeAdminOfBoard, makeNormalMemberOfBoard, makeNormalMemberOfOrganization, makeObserverOfBoard, memberJoinedTrello, moveCardFromBoard, moveCardToBoard, moveListFromBoard, moveListToBoard, removeChecklistFromCard, removeFromOrganizationBoard, removeMemberFromCard, unconfirmedBoardInvitation, unconfirmedOrganizationInvitation, updateBoard, updateCard, updateCard:closed, updateCard:desc, updateCard:idList, updateCard:name, updateCheckItemStateOnCard, updateChecklist, updateList, updateList:closed, updateList:name, updateMember, updateOrganization.",
+                    "required": false
+                },
+                {
+                    "name": "format",
+                    "type": "String",
+                    "info": "One of actions format. One of: count, list, minimal.",
+                    "required": false
+                },
+                {
+                    "name": "since",
+                    "type": "String",
+                    "info": "One of actions since. One of: date, null, lastView.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "One of actions before, date or null.",
+                    "required": false
+                },
+                {
+                    "name": "page",
+                    "type": "String",
+                    "info": "Actions page. Page limit must be less than 1000.",
+                    "required": false
+                },
+                {
+                    "name": "idModels",
+                    "type": "String",
+                    "info": "Actions identifier models. Return actions related to these model identifiers.",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "String",
+                    "info": "Actions limit. One of: number from 0 to 1000.",
+                    "required": false
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of action fields. One of: all, data, date, idMemberCreator, type.",
+                    "required": false
+                },
+                {
+                    "name": "member",
+                    "type": "Boolean",
+                    "info": "Action member. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "memberFields",
+                    "type": "String",
+                    "info": "Comma-separated list of action member fields. One of: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                },
+                {
+                    "name": "memberCreator",
+                    "type": "Boolean",
+                    "info": "Action member creator. One of: true, false.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getBoardStars",
+            "description": "Get single board stars.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "filter",
+                    "type": "String",
+                    "info": "Type of board stars. One of: mine, none.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getBoardCards",
+            "description": "Get single board cards.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "actions",
+                    "type": "String",
+                    "info": "Comma-separated list of actions. One of: all, addAttachmentToCard, addChecklistToCard, addMemberToBoard, addMemberToCard, addMemberToOrganization, addToOrganizationBoard, commentCard, convertToCardFromCheckItem, copyBoard, copyCard, copyCommentCard, createBoard, createCard, createList, createOrganization, deleteAttachmentFromCard, deleteBoardInvitation, deleteCard, deleteOrganizationInvitation, disablePowerUp, emailCard, enablePowerUp, makeAdminOfBoard, makeNormalMemberOfBoard, makeNormalMemberOfOrganization, makeObserverOfBoard, memberJoinedTrello, moveCardFromBoard, moveCardToBoard, moveListFromBoard, moveListToBoard, removeChecklistFromCard, removeFromOrganizationBoard, removeMemberFromCard, unconfirmedBoardInvitation, unconfirmedOrganizationInvitation, updateBoard, updateCard, updateCard:closed, updateCard:desc, updateCard:idList, updateCard:name, updateCheckItemStateOnCard, updateChecklist, updateList, updateList:closed, updateList:name, updateMember, updateOrganization.",
+                    "required": false
+                },
+                {
+                    "name": "filter",
+                    "type": "String",
+                    "info": "Type of cards. One of: all, closed, none, open, visible.",
+                    "required": false
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of card fields. One of: all, badges, checkItemStates, closed, dateLastActivity, desc, descData, due, email, idAttachmentCover, idBoard, idChecklists, idLabels, idList, idMembers, idMembersVoted, idShort, labels, manualCoverAttachment, name, pos, shortLink, shortUrl, subscribed, url.",
+                    "required": false
+                },
+                {
+                    "name": "attachments",
+                    "type": "String",
+                    "info": "Type of card attachments. One of: false, cover.",
+                    "required": false
+                },
+                {
+                    "name": "attachmentFields",
+                    "type": "String",
+                    "info": "Comma-separated list of card attachment fields. One of: all, bytes, date, edgeColor, idMember, isUpload, mimeType, name, previews, url.",
+                    "required": false
+                },
+                {
+                    "name": "checklists",
+                    "type": "String",
+                    "info": "Card checklists. One of: all, none.",
+                    "required": false
+                },
+                {
+                    "name": "stickers",
+                    "type": "Boolean",
+                    "info": "Card stickers. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "members",
+                    "type": "String",
+                    "info": "Card members. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "memberFields",
+                    "type": "String",
+                    "info": "Comma-separated list of member fields. One of: avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                },
+                {
+                    "name": "checkItemStates",
+                    "type": "Boolean",
+                    "info": "Check item states. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "String",
+                    "info": "Limit, a number from 1 to 1000.",
+                    "required": false
+                },
+                {
+                    "name": "since",
+                    "type": "String",
+                    "info": "Since, a date, or null.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Before, a date, or null.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getBoardSingleCard",
+            "description": "Get single cards of single board.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "idCard",
+                    "type": "String",
+                    "info": "The card identifier.",
+                    "required": true
+                },
+                {
+                    "name": "attachments",
+                    "type": "String",
+                    "info": "Type of card attachments. One of: false, cover.",
+                    "required": false
+                },
+                {
+                    "name": "attachmentFields",
+                    "type": "String",
+                    "info": "Comma-separated list of card attachment fields. One of: all, bytes, date, edgeColor, idMember, isUpload, mimeType, name, previews, url.",
+                    "required": false
+                },
+                {
+                    "name": "actions",
+                    "type": "String",
+                    "info": "Comma-separated list of actions. One of: all, addAttachmentToCard, addChecklistToCard, addMemberToBoard, addMemberToCard, addMemberToOrganization, addToOrganizationBoard, commentCard, convertToCardFromCheckItem, copyBoard, copyCard, copyCommentCard, createBoard, createCard, createList, createOrganization, deleteAttachmentFromCard, deleteBoardInvitation, deleteCard, deleteOrganizationInvitation, disablePowerUp, emailCard, enablePowerUp, makeAdminOfBoard, makeNormalMemberOfBoard, makeNormalMemberOfOrganization, makeObserverOfBoard, memberJoinedTrello, moveCardFromBoard, moveCardToBoard, moveListFromBoard, moveListToBoard, removeChecklistFromCard, removeFromOrganizationBoard, removeMemberFromCard, unconfirmedBoardInvitation, unconfirmedOrganizationInvitation, updateBoard, updateCard, updateCard:closed, updateCard:desc, updateCard:idList, updateCard:name, updateCheckItemStateOnCard, updateChecklist, updateList, updateList:closed, updateList:name, updateMember, updateOrganization.",
+                    "required": false
+                },
+                {
+                    "name": "actionsEntities",
+                    "type": "Boolean",
+                    "info": "Actions entities. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "actionsDisplay",
+                    "type": "Boolean",
+                    "info": "Display actions. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "actionsLimit",
+                    "type": "String",
+                    "info": "Actions limit. One of: number from 0 to 1000.",
+                    "required": false
+                },
+                {
+                    "name": "actionFields",
+                    "type": "String",
+                    "info": "Comma-separated list of action fields. One of: all, data, date, idMemberCreator, type.",
+                    "required": false
+                },
+                {
+                    "name": "actionMemberCreatorFields",
+                    "type": "String",
+                    "info": "Comma-separated list of action member creator fields. One of: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                },
+                {
+                    "name": "members",
+                    "type": "Boolean",
+                    "info": "Card members. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "memberFields",
+                    "type": "String",
+                    "info": "Comma-separated list of member fields. One of: avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                },
+                {
+                    "name": "checkItemStates",
+                    "type": "Boolean",
+                    "info": "Check item states. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "checkItemStateFields",
+                    "type": "String",
+                    "info": "Comma-separated list of check item states fields. One of: all, idCheckItem, state.",
+                    "required": false
+                },
+                {
+                    "name": "labels",
+                    "type": "Boolean",
+                    "info": "Labels. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "checklists",
+                    "type": "String",
+                    "info": "Type of checklists. One of: all, none.",
+                    "required": false
+                },
+                {
+                    "name": "checklistFields",
+                    "type": "String",
+                    "info": "Type of checklist fields. One of: idBoard, idCard, name, pos.",
+                    "required": false
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of fields. One of: all, badges, checkItemStates, closed, dateLastActivity, desc, descData, due, email, idAttachmentCover, idBoard, idChecklists, idLabels, idList, idMembers, idMembersVoted, idShort, labels, manualCoverAttachment, name, pos, shortLink, shortUrl, subscribed, url.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getBoardChecklists",
+            "description": "Get single board checklists.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "cards",
+                    "type": "String",
+                    "info": "List of cards type. One of: all, closed, none, open.",
+                    "required": false
+                },
+                {
+                    "name": "cardFields",
+                    "type": "String",
+                    "info": "Comma-separated list of card fields. One of: all, badges, checkItemStates, closed, dateLastActivity, desc, descData, due, email, idAttachmentCover, idBoard, idChecklists, idLabels, idList, idMembers, idMembersVoted, idShort, labels, manualCoverAttachment, name, pos, shortLink, shortUrl, subscribed, url.",
+                    "required": false
+                },
+                {
+                    "name": "checkItems",
+                    "type": "String",
+                    "info": "Check items. One of: all, none.",
+                    "required": false
+                },
+                {
+                    "name": "checkItemFields",
+                    "type": "String",
+                    "info": "Comma-separated list of check item fields. One of: name, nameData, pos, state, type.",
+                    "required": false
+                },
+                {
+                    "name": "filter",
+                    "type": "String",
+                    "info": "Filter, one of: all, none.",
+                    "required": false
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of fields. One of: all, idBoard, idCard, name, pos.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getBoardDeltas",
+            "description": "Get single board deltas.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "tags",
+                    "type": "String",
+                    "info": "A valid tag for subscribing.",
+                    "required": true
+                },
+                {
+                    "name": "ixLastUpdate",
+                    "type": "String",
+                    "info": "IX last update a number, from -1 to Infinity.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getBoardLabels",
+            "description": "Get single board labels.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of fields. One of: all, color, idBoard, name, uses.",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "String",
+                    "info": "Limit, a number from 0 to 1000.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getBoardSingleLabel",
+            "description": "Get single labels of single board.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "idLabel",
+                    "type": "String",
+                    "info": "The identifier of the label.",
+                    "required": true
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of fields. One of: all, color, idBoard, name, uses.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getBoardLists",
+            "description": "Get single board lists.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "cards",
+                    "type": "String",
+                    "info": "Type of cards. One of: all, closed, none, open, visible.",
+                    "required": false
+                },
+                {
+                    "name": "cardFields",
+                    "type": "String",
+                    "info": "Comma-separated list of card fields. One of: all, badges, checkItemStates, closed, dateLastActivity, desc, descData, due, email, idAttachmentCover, idBoard, idChecklists, idLabels, idList, idMembers, idMembersVoted, idShort, labels, manualCoverAttachment, name, pos, shortLink, shortUrl, subscribed, url.",
+                    "required": false
+                },
+                {
+                    "name": "filter",
+                    "type": "String",
+                    "info": "Filter by type of lists. One of: all, closed, none, open.",
+                    "required": false
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of fields. One of: all, closed, idBoard, name, pos, subscribed.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getBoardMembers",
+            "description": "Get single board members.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "filter",
+                    "type": "String",
+                    "info": "Filter by type of lists. One of: admins, all, none, normal, owners.",
+                    "required": false
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of fields. One of: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                },
+                {
+                    "name": "activity",
+                    "type": "Boolean",
+                    "info": "Activity. One of: true, false.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getSingleBoardMemberCards",
+            "description": "Get single members cards of single board.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "idMember",
+                    "type": "String",
+                    "info": "An identifier, username, or organization name of member.",
+                    "required": true
+                },
+                {
+                    "name": "actions",
+                    "type": "String",
+                    "info": "Comma-separated list of actions. One of: all, addAttachmentToCard, addChecklistToCard, addMemberToBoard, addMemberToCard, addMemberToOrganization, addToOrganizationBoard, commentCard, convertToCardFromCheckItem, copyBoard, copyCard, copyCommentCard, createBoard, createCard, createList, createOrganization, deleteAttachmentFromCard, deleteBoardInvitation, deleteCard, deleteOrganizationInvitation, disablePowerUp, emailCard, enablePowerUp, makeAdminOfBoard, makeNormalMemberOfBoard, makeNormalMemberOfOrganization, makeObserverOfBoard, memberJoinedTrello, moveCardFromBoard, moveCardToBoard, moveListFromBoard, moveListToBoard, removeChecklistFromCard, removeFromOrganizationBoard, removeMemberFromCard, unconfirmedBoardInvitation, unconfirmedOrganizationInvitation, updateBoard, updateCard, updateCard:closed, updateCard:desc, updateCard:idList, updateCard:name, updateCheckItemStateOnCard, updateChecklist, updateList, updateList:closed, updateList:name, updateMember, updateOrganization.",
+                    "required": false
+                },
+                {
+                    "name": "attachments",
+                    "type": "String",
+                    "info": "Type of card attachments. One of: false, cover.",
+                    "required": false
+                },
+                {
+                    "name": "attachmentFields",
+                    "type": "String",
+                    "info": "Comma-separated list of card attachment fields. One of: all, bytes, date, edgeColor, idMember, isUpload, mimeType, name, previews, url.",
+                    "required": false
+                },
+                {
+                    "name": "members",
+                    "type": "Boolean",
+                    "info": "Card members. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "memberFields",
+                    "type": "String",
+                    "info": "Comma-separated list of member fields. One of: avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                },
+                {
+                    "name": "checkItemStates",
+                    "type": "Boolean",
+                    "info": "Check item states. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "checklists",
+                    "type": "String",
+                    "info": "Type of checklists. One of: all, none.",
+                    "required": false
+                },
+                {
+                    "name": "board",
+                    "type": "Boolean",
+                    "info": "Board, one of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "boardFields",
+                    "type": "String",
+                    "info": "Comma-separated list of board fields. One of: closed, dateLastActivity, dateLastView, desc, descData, idOrganization, invitations, invited, labelNames, memberships, name, pinned, powerUps, prefs, shortLink, shortUrl, starred, subscribed, url.",
+                    "required": false
+                },
+                {
+                    "name": "list",
+                    "type": "Boolean",
+                    "info": "List, one of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "listFields",
+                    "type": "String",
+                    "info": "Comma-separated list of list fields. One of: all, closed, idBoard, name, pos, subscribed.",
+                    "required": false
+                },
+                {
+                    "name": "filter",
+                    "type": "String",
+                    "info": "Type of filter. One of: all, closed, none, open, visible.",
+                    "required": false
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of fields. One of: all, badges, checkItemStates, closed, dateLastActivity, desc, descData, due, email, idAttachmentCover, idBoard, idChecklists, idLabels, idList, idMembers, idMembersVoted, idShort, labels, manualCoverAttachment, name, pos, shortLink, shortUrl, subscribed, url.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getMembersInvitedToBoard",
+            "description": "Get members invited to single board.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of fields. One of: avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getBoardMemberships",
+            "description": "Get single board memberships.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "filter",
+                    "type": "String",
+                    "info": "Comma-separated list of filter. One of: none, active, admin, deactivated, me, normal.",
+                    "required": false
+                },
+                {
+                    "name": "member",
+                    "type": "Boolean",
+                    "info": "Memberships member. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "memberFields",
+                    "type": "String",
+                    "info": "Comma-separated list of member fields. One of: avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getBoardSingleMembership",
+            "description": "Get single memberships of single board.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "idMembership",
+                    "type": "String",
+                    "info": "A membership document identifier.",
+                    "required": true
+                },
+                {
+                    "name": "member",
+                    "type": "Boolean",
+                    "info": "Memberships member. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "memberFields",
+                    "type": "String",
+                    "info": "Comma-separated list of member fields. One of: avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getBoardPreferences",
+            "description": "Get single board preferences.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getBoardOrganization",
+            "description": "Get single board organization.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of organization fields. One of: all, billableMemberCount, desc, descData, displayName, idBoards, invitations, invited, logoHash, memberships, name, powerUps, prefs, premiumFeatures, products, url, website.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateBoard",
+            "description": "Update single board.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "Board name, a string with a length from 1 to 16384.",
+                    "required": false
+                },
+                {
+                    "name": "desc",
+                    "type": "String",
+                    "info": "Board description, a string with a length from 0 to 16384.",
+                    "required": false
+                },
+                {
+                    "name": "closed",
+                    "type": "Boolean",
+                    "info": "Is closed. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "subscribed",
+                    "type": "Boolean",
+                    "info": "Is subscribed. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "idOrganization",
+                    "type": "String",
+                    "info": "Identifier of organization. A string with a length from 0 to 16384.",
+                    "required": false
+                },
+                {
+                    "name": "prefsPermissionLevel",
+                    "type": "String",
+                    "info": "Board preference permission level. One of: org, private, public.",
+                    "required": false
+                },
+                {
+                    "name": "prefsSelfJoin",
+                    "type": "Boolean",
+                    "info": "Board preference self join. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "prefsCardCovers",
+                    "type": "Boolean",
+                    "info": "Board preference card covers. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "prefsInvitations",
+                    "type": "String",
+                    "info": "Board preference invitations. One of: admins, members.",
+                    "required": false
+                },
+                {
+                    "name": "prefsVoting",
+                    "type": "String",
+                    "info": "Board preference voting. One of: disabled, members, observers, org, public.",
+                    "required": false
+                },
+                {
+                    "name": "prefsComments",
+                    "type": "String",
+                    "info": "Board preference comments. One of: disabled, members, observers, org, public.",
+                    "required": false
+                },
+                {
+                    "name": "prefsBackground",
+                    "type": "String",
+                    "info": "Board preferences background. One of: A standard background name, or the identifier of a custom background.",
+                    "required": false
+                },
+                {
+                    "name": "prefsCardAging",
+                    "type": "String",
+                    "info": "Board preferences card aging. One of: pirate, regular.",
+                    "required": false
+                },
+                {
+                    "name": "prefsCalendarFeedEnabled",
+                    "type": "Boolean",
+                    "info": "Board preferences calendar feed enabled. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "labelNamesGreen",
+                    "type": "String",
+                    "info": "Green label name. One of: A string with a length from 0 to 16384.",
+                    "required": false
+                },
+                {
+                    "name": "labelNamesYellow",
+                    "type": "String",
+                    "info": "Yellow label name. One of: A string with a length from 0 to 16384.",
+                    "required": false
+                },
+                {
+                    "name": "labelNamesOrange",
+                    "type": "String",
+                    "info": "Orange label name. One of: A string with a length from 0 to 16384.",
+                    "required": false
+                },
+                {
+                    "name": "labelNamesRed",
+                    "type": "String",
+                    "info": "Red label name. One of: A string with a length from 0 to 16384.",
+                    "required": false
+                },
+                {
+                    "name": "labelNamesPurple",
+                    "type": "String",
+                    "info": "Purple label name. One of: A string with a length from 0 to 16384.",
+                    "required": false
+                },
+                {
+                    "name": "labelNamesBlue",
+                    "type": "String",
+                    "info": "Blue label name. One of: A string with a length from 0 to 16384.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateBoardCloseState",
+            "description": "Update single board close state.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "info": "Is closed. One of: true, false.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateBoardDescription",
+            "description": "Update single board description.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Description value. a string with a length from 0 to 16384.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateBoardOrganization",
+            "description": "Update single board organization.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "New organization identifier. a string with a length from 0 to 16384.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateBoardSingleLabel",
+            "description": "Update single label of single board.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "labelColor",
+                    "type": "String",
+                    "info": "Label color name. One of: blue, green, orange, purple, red, yellow.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Label value, a string with a length from 0 to 16384.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "addMemberToBoard",
+            "description": "Add single member to board.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "email",
+                    "type": "String",
+                    "info": "An email address of new member.",
+                    "required": true
+                },
+                {
+                    "name": "fullName",
+                    "type": "String",
+                    "info": "Full name of new member. Cannot begin or end with a space.",
+                    "required": true
+                },
+                {
+                    "name": "type",
+                    "type": "String",
+                    "info": "Type of new member. One of: admin, normal, observer.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "setMemberRoleOnBoard",
+            "description": "Update board single member role.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "idMember",
+                    "type": "String",
+                    "info": "An identifier, username, or organization name.",
+                    "required": true
+                },
+                {
+                    "name": "type",
+                    "type": "String",
+                    "info": "Type of new member. One of: admin, normal, observer.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateBoardMembership",
+            "description": "Update board single membership.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "idMembership",
+                    "type": "String",
+                    "info": "An identifier of membership.",
+                    "required": true
+                },
+                {
+                    "name": "type",
+                    "type": "String",
+                    "info": "Type of new member. One of: admin, normal, observer.",
+                    "required": true
+                },
+                {
+                    "name": "memberFields",
+                    "type": "String",
+                    "info": "Comma-separated list of member fields. One of: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "setBoardName",
+            "description": "Update board name.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Board new name, a string with a length from 1 to 16384.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateBoardSubscriptionState",
+            "description": "Update board subscription state.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "info": "Board subscription state. One of: true, false.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateEmailPosition",
+            "description": "Update board email position.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Board email position. One of: bottom, top.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateEmailList",
+            "description": "Update board email list.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Board email list identifier.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "setShowListGuideState",
+            "description": "Update board show list guide state.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "info": "Board show list guide state. One of: true, false.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateShowSidebarState",
+            "description": "Update board show sidebar state.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "info": "Board show sidebar state. One of: true, false.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateShowSidebarActivityState",
+            "description": "Update board show sidebar activity state.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "info": "Board show sidebar activity state. One of: true, false.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateShowSidebarBoardActionsState",
+            "description": "Update board show sidebar board actions state.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "info": "Board show sidebar board actions state. One of: true, false.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateShowSidebarMembersState",
+            "description": "Update board show sidebar members state.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "info": "Board show sidebar members state. One of: true, false.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateBoardBackground",
+            "description": "Update board background.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Board background. A standard background name, or the identifier of a custom background.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateCalendarFeedEnableState",
+            "description": "Update board calendar feed enable state.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "info": "Board calendar feed enable state. One of: true, false.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateBoardCardAgingPrefs",
+            "description": "Update board card aging preferences.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Board card aging preferences. One of: pirate, regular.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateBoardCardCoversState",
+            "description": "Update board card covers state.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "info": "Board card covers state. One of: true, false.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateBoardCommentsPrefs",
+            "description": "Update board comments preferences.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Board comments preferences. One of: disabled, members, observers, org, public.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateBoardInvitationsPrefs",
+            "description": "Update board invitations preferences.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Board invitations preferences. One of: admins, members.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateBoardPermissionLevel",
+            "description": "Update board permission level.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Board permission level. One of: org, private, public.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateBoardSelfJoinState",
+            "description": "Update board self join state.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "info": "Board self join state. One of: true, false.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateBoardVotingPrefs",
+            "description": "Update board voting preferences.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Board voting preferences. One of: disabled, members, observers, org, public.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "createBoard",
+            "description": "Update board voting preferences.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "Board name, a string with a length from 1 to 16384.",
+                    "required": true
+                },
+                {
+                    "name": "defaultLabels",
+                    "type": "Boolean",
+                    "info": "Default labels. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "defaultLists",
+                    "type": "Boolean",
+                    "info": "Default lists. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "desc",
+                    "type": "String",
+                    "info": "Description, a string with a length from 0 to 16384.",
+                    "required": false
+                },
+                {
+                    "name": "idOrganization",
+                    "type": "String",
+                    "info": "The identifier or name of the organization to add the board to.",
+                    "required": false
+                },
+                {
+                    "name": "idBoardSource",
+                    "type": "String",
+                    "info": "The identifier of the board to copy into the new board.",
+                    "required": false
+                },
+                {
+                    "name": "keepFromSource",
+                    "type": "String",
+                    "info": "Keep from source, all or components of the source board to copy.",
+                    "required": false
+                },
+                {
+                    "name": "powerUps",
+                    "type": "String",
+                    "info": "PowerUps. One of: all, calendar, cardAging, recap, voting.",
+                    "required": false
+                },
+                {
+                    "name": "prefsPermissionLevel",
+                    "type": "String",
+                    "info": "Preferences permission level. One of: org, private, public.",
+                    "required": false
+                },
+                {
+                    "name": "prefsVoting",
+                    "type": "String",
+                    "info": "Preferences voting. One of: disabled, members, observers, org, public.",
+                    "required": false
+                },
+                {
+                    "name": "prefsComments",
+                    "type": "String",
+                    "info": "Preferences comments. One of: disabled, members, observers, org, public.",
+                    "required": false
+                },
+                {
+                    "name": "prefsInvitations",
+                    "type": "String",
+                    "info": "Preferences invitations. One of: admins, members.",
+                    "required": false
+                },
+                {
+                    "name": "prefsSelfJoin",
+                    "type": "Boolean",
+                    "info": "Preferences self join. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "prefsCardCovers",
+                    "type": "Boolean",
+                    "info": "Preferences card covers. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "prefsBackground",
+                    "type": "String",
+                    "info": "Preferences background, a string with a length from 0 to 16384.",
+                    "required": false
+                },
+                {
+                    "name": "prefsCardAging",
+                    "type": "String",
+                    "info": "Preferences card aging. One of: pirate, regular.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "createBoardCalendarKey",
+            "description": "Create board calendar key.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "addChecklistToBoard",
+            "description": "Add checklist to board.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "Checklists name, a string with a length from 1 to 16384.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "createBoardEmailKey",
+            "description": "Create board email key.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "createBoardLabels",
+            "description": "Create board labels.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "Board labels name, a string with a length from 0 to 16384.",
+                    "required": true
+                },
+                {
+                    "name": "color",
+                    "type": "String",
+                    "info": "Label color or null. Valid value: blue, green, orange, purple, red, yellow.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "createBoardList",
+            "description": "Create board list.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "Board lists name, a string with a length from 0 to 16384.",
+                    "required": true
+                },
+                {
+                    "name": "pos",
+                    "type": "String",
+                    "info": "A position. top, bottom, or a positive number.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "markBoardViewed",
+            "description": "Mark board as viewed.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "createBoardPowerUps",
+            "description": "Create board power Ups.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Power Ups value. One of: calendar, cardAging, recap, voting.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "deleteMemberFromBoard",
+            "description": "Delete member from board.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "idMember",
+                    "type": "String",
+                    "info": "An identifier, username, or organization name of member.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "deleteBoardPowerUp",
+            "description": "Delete board power up.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "boardId",
+                    "type": "String",
+                    "info": "The board identifier.",
+                    "required": true
+                },
+                {
+                    "name": "powerUp",
+                    "type": "String",
+                    "info": "Board power up. One of: calendar, cardAging, recap, voting.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        }
+    ]
+}
