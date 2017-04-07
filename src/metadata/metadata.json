@@ -3560,6 +3560,2558 @@
                     "info": "Success"
                 }
             ]
+        },
+        {
+            "name": "getSingleCard",
+            "description": "Get a single card by id or shortlink.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "actions",
+                    "type": "String",
+                    "info": "Comma-separated list of actions. One of: all, addAttachmentToCard, addChecklistToCard, addMemberToBoard, addMemberToCard, addMemberToOrganization, addToOrganizationBoard, commentCard, convertToCardFromCheckItem, copyBoard, copyCard, copyCommentCard, createBoard, createCard, createList, createOrganization, deleteAttachmentFromCard, deleteBoardInvitation, deleteCard, deleteOrganizationInvitation, disablePowerUp, emailCard, enablePowerUp, makeAdminOfBoard, makeNormalMemberOfBoard, makeNormalMemberOfOrganization, makeObserverOfBoard, memberJoinedTrello, moveCardFromBoard, moveCardToBoard, moveListFromBoard, moveListToBoard, removeChecklistFromCard, removeFromOrganizationBoard, removeMemberFromCard, unconfirmedBoardInvitation, unconfirmedOrganizationInvitation, updateBoard, updateCard, updateCard:closed, updateCard:desc, updateCard:idList, updateCard:name, updateCheckItemStateOnCard, updateChecklist, updateList, updateList:closed, updateList:name, updateMember, updateOrganization.",
+                    "required": false
+                },
+                {
+                    "name": "actionsEntities",
+                    "type": "Boolean",
+                    "info": "Actions entities. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "actionsDisplay",
+                    "type": "Boolean",
+                    "info": "Actions display. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "actionsLimit",
+                    "type": "String",
+                    "info": "Actions limit, a number from 0 to 1000.",
+                    "required": false
+                },
+                {
+                    "name": "actionFields",
+                    "type": "String",
+                    "info": "Comma-separated list of action fields. One of: all, data, date, idMemberCreator, type.",
+                    "required": false
+                },
+                {
+                    "name": "actionMemberCreatorFields",
+                    "type": "String",
+                    "info": "Comma-separated list of action member creator fields. One of: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                },
+                {
+                    "name": "attachments",
+                    "type": "String",
+                    "info": "Attachments, one of: true, false, cover.",
+                    "required": false
+                },
+                {
+                    "name": "attachmentFields",
+                    "type": "String",
+                    "info": "Comma-separated list of attachment fields. One of: all, bytes, date, edgeColor, idMember, isUpload, mimeType, name, previews, url.",
+                    "required": false
+                },
+                {
+                    "name": "members",
+                    "type": "Boolean",
+                    "info": "Members. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "memberFields",
+                    "type": "String",
+                    "info": "Comma-separated list of member fields. One of: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                },
+                {
+                    "name": "membersVoted",
+                    "type": "Boolean",
+                    "info": "Members voted. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "memberVotedFields",
+                    "type": "String",
+                    "info": "Comma-separated list of member voted fields. One of: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                },
+                {
+                    "name": "checkItemStates",
+                    "type": "Boolean",
+                    "info": "Check item states. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "checkItemStateFields",
+                    "type": "String",
+                    "info": "Comma-separated list of check item state fields. One of: all, idCheckItem, state.",
+                    "required": false
+                },
+                {
+                    "name": "checklists",
+                    "type": "String",
+                    "info": "Checklists. One of: all, none.",
+                    "required": false
+                },
+                {
+                    "name": "checklistFields",
+                    "type": "String",
+                    "info": "Comma-separated list of checklist fields. One of: all, idBoard, idCard, name, pos.",
+                    "required": false
+                },
+                {
+                    "name": "board",
+                    "type": "Boolean",
+                    "info": "Board. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "boardFields",
+                    "type": "String",
+                    "info": "Comma-separated list of board fields. One of: all, closed, dateLastActivity, dateLastView, desc, descData, idOrganization, invitations, invited, labelNames, memberships, name, pinned, powerUps, prefs, shortLink, shortUrl, starred, subscribed, url.",
+                    "required": false
+                },
+                {
+                    "name": "list",
+                    "type": "Boolean",
+                    "info": "List. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "listFields",
+                    "type": "String",
+                    "info": "Comma-separated list of list fields. One of: all, closed, idBoard, name, pos, subscribed.",
+                    "required": false
+                },
+                {
+                    "name": "pluginData",
+                    "type": "Boolean",
+                    "info": "Plugin data. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "stickers",
+                    "type": "Boolean",
+                    "info": "Stickers. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "stickerFields",
+                    "type": "String",
+                    "info": "Comma-separated list of sticker fields. One of: all, image, imageScaled, imageUrl, left, rotate, top, zIndex.",
+                    "required": false
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of fields. One of: all, badges, checkItemStates, closed, dateLastActivity, desc, descData, due, dueComplete, email, idAttachmentCover, idBoard, idChecklists, idLabels, idList, idMembers, idMembersVoted, idShort, labels, manualCoverAttachment, name, pos, shortLink, shortUrl, subscribed, url.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getCardActions",
+            "description": "Get a single card actions.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "entities",
+                    "type": "Boolean",
+                    "info": "Actions entities. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "display",
+                    "type": "Boolean",
+                    "info": "Actions display. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "filter",
+                    "type": "String",
+                    "info": "Comma-separated list of actions. One of: all, addAttachmentToCard, addChecklistToCard, addMemberToBoard, addMemberToCard, addMemberToOrganization, addToOrganizationBoard, commentCard, convertToCardFromCheckItem, copyBoard, copyCard, copyCommentCard, createBoard, createCard, createList, createOrganization, deleteAttachmentFromCard, deleteBoardInvitation, deleteCard, deleteOrganizationInvitation, disablePowerUp, emailCard, enablePowerUp, makeAdminOfBoard, makeNormalMemberOfBoard, makeNormalMemberOfOrganization, makeObserverOfBoard, memberJoinedTrello, moveCardFromBoard, moveCardToBoard, moveListFromBoard, moveListToBoard, removeChecklistFromCard, removeFromOrganizationBoard, removeMemberFromCard, unconfirmedBoardInvitation, unconfirmedOrganizationInvitation, updateBoard, updateCard, updateCard:closed, updateCard:desc, updateCard:idList, updateCard:name, updateCheckItemStateOnCard, updateChecklist, updateList, updateList:closed, updateList:name, updateMember, updateOrganization.",
+                    "required": false
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of action fields. One of: all, data, date, idMemberCreator, type.",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "String",
+                    "info": "Actions limit, a number from 0 to 1000.",
+                    "required": false
+                },
+                {
+                    "name": "format",
+                    "type": "String",
+                    "info": "Format, one of: count, list, minimal.",
+                    "required": false
+                },
+                {
+                    "name": "since",
+                    "type": "String",
+                    "info": "Since, a date, null or lastView.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Before, a date, or null.",
+                    "required": false
+                },
+                {
+                    "name": "idModels",
+                    "type": "String",
+                    "info": "Return actions related to these model ids.",
+                    "required": false
+                },
+                {
+                    "name": "member",
+                    "type": "Boolean",
+                    "info": "Member. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "memberFields",
+                    "type": "String",
+                    "info": "Comma-separated list of member fields. One of: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                },
+                {
+                    "name": "memberCreator",
+                    "type": "Boolean",
+                    "info": "Member creator. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "memberCreatorFields",
+                    "type": "String",
+                    "info": "Comma-separated list of action member creator fields. One of: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getCardAttachments",
+            "description": "Get a single card attachments.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of attachment fields. One of: all, bytes, date, edgeColor, idMember, isUpload, mimeType, name, previews, url.",
+                    "required": false
+                },
+                {
+                    "name": "filter",
+                    "type": "String",
+                    "info": "Attachments filter, one of: true, false, cover.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getCardSingleAttachment",
+            "description": "Get a single attachments of single card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "idAttachment",
+                    "type": "String",
+                    "info": "The id of the attachment.",
+                    "required": true
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of attachment fields. One of: all, bytes, date, edgeColor, idMember, isUpload, mimeType, name, previews, url.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getCardBoard",
+            "description": "Get a single attachments of single card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of card board fields. One of: all, closed, dateLastActivity, dateLastView, desc, descData, idOrganization, invitations, invited, labelNames, memberships, name, pinned, powerUps, prefs, shortLink, shortUrl, starred, subscribed, url.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getCardChecklistItemStates",
+            "description": "Get a single card checklist item states.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of fields. One of: all, idCheckItem, state.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getCardChecklists",
+            "description": "Get a single card checklists.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "cards",
+                    "type": "String",
+                    "info": "Cards, one of: all, closed, none, open, visible.",
+                    "required": false
+                },
+                {
+                    "name": "cardFields",
+                    "type": "String",
+                    "info": "Comma-separated list of card fields. One of: all, badges, checkItemStates, closed, dateLastActivity, desc, descData, due, dueComplete, email, idAttachmentCover, idBoard, idChecklists, idLabels, idList, idMembers, idMembersVoted, idShort, labels, manualCoverAttachment, name, pos, shortLink, shortUrl, subscribed, url.",
+                    "required": false
+                },
+                {
+                    "name": "checkItems",
+                    "type": "String",
+                    "info": "Check items. One of: all, none.",
+                    "required": false
+                },
+                {
+                    "name": "checkItemFields",
+                    "type": "String",
+                    "info": "Check item fields. One of: name, nameData, pos, state, type.",
+                    "required": false
+                },
+                {
+                    "name": "filter",
+                    "type": "String",
+                    "info": "Filter. One of: all, none.",
+                    "required": false
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Comma-separated list of fields. One of: all, idBoard, idCard, name, pos.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getCardSingleCheckItem",
+            "description": "Get a single check item of single card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "idCheckItem",
+                    "type": "String",
+                    "info": "Id of the checkitem to retrieve.",
+                    "required": true
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Check item fields. One of: all, name, nameData, pos, state, type.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getCardList",
+            "description": "Get a single card list.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Card list fields. One of: all, closed, idBoard, name, pos, subscribed.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getCardMembers",
+            "description": "Get a single card members.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Card list fields. One of: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getMemberVoteToCard",
+            "description": "Get a member vote of a single card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Card list fields. One of: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getCardStickers",
+            "description": "Get a single card stickers.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Card sticker fields. One of: all, image, imageScaled, imageUrl, left, rotate, top, zIndex.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getCardSingleSticker",
+            "description": "Get a single sticker of a single card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "idSticker",
+                    "type": "String",
+                    "info": "Card sticker id.",
+                    "required": true
+                },
+                {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Card sticker fields. One of: all, image, imageScaled, imageUrl, left, rotate, top, zIndex.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateSingleCard",
+            "description": "Update a single card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "Name of single card, a string with a length from 1 to 16384.",
+                    "required": false
+                },
+                {
+                    "name": "desc",
+                    "type": "String",
+                    "info": "Description of single card, a string with a length from 0 to 16384.",
+                    "required": false
+                },
+                {
+                    "name": "closed",
+                    "type": "Boolean",
+                    "info": "Is closed. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "idMembers",
+                    "type": "String",
+                    "info": "A comma-separated list of objectIds, 24-character hex strings.",
+                    "required": false
+                },
+                {
+                    "name": "idAttachmentCover",
+                    "type": "String",
+                    "info": "Id of the image attachment of this card to use as its cover.",
+                    "required": false
+                },
+                {
+                    "name": "idList",
+                    "type": "String",
+                    "info": "Id of the list the card should be moved to.",
+                    "required": false
+                },
+                {
+                    "name": "idLabels",
+                    "type": "String",
+                    "info": "A comma-separated list of objectIds, 24-character hex strings.",
+                    "required": false
+                },
+                {
+                    "name": "idBoard",
+                    "type": "String",
+                    "info": "Id of the board the card should be moved to.",
+                    "required": false
+                },
+                {
+                    "name": "pos",
+                    "type": "String",
+                    "info": "A position. top, bottom, or a positive number.",
+                    "required": false
+                },
+                {
+                    "name": "due",
+                    "type": "String",
+                    "info": "Due a date.",
+                    "required": false
+                },
+                {
+                    "name": "dueComplete",
+                    "type": "Boolean",
+                    "info": "Is due complete. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "subscribed",
+                    "type": "Boolean",
+                    "info": "Is subscribed. One of: true, false.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateCardCheckItemName",
+            "description": "Update a single card check item name.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "idChecklist",
+                    "type": "String",
+                    "info": "The id of the checklist.",
+                    "required": true
+                },
+                {
+                    "name": "idCheckItem",
+                    "type": "String",
+                    "info": "The id of the checkitem to modify.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Check item name, a string with a length from 1 to 16384.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateCardCheckItemPos",
+            "description": "Update a single card check item position.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "idChecklist",
+                    "type": "String",
+                    "info": "The id of the checklist.",
+                    "required": true
+                },
+                {
+                    "name": "idCheckItem",
+                    "type": "String",
+                    "info": "The id of the checkitem to modify.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Check item position. One of: top, bottom, or a positive number.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateCardCheckItemState",
+            "description": "Update a single card check item state.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "idChecklist",
+                    "type": "String",
+                    "info": "The id of the checklist.",
+                    "required": true
+                },
+                {
+                    "name": "idCheckItem",
+                    "type": "String",
+                    "info": "The id of the checkitem to modify.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Check item state. One of: complete, incomplete, true, false.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateCardCheckItem",
+            "description": "Update a single card check item.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "idCheckItem",
+                    "type": "String",
+                    "info": "The id of the checkitem to modify.",
+                    "required": true
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "Check item name, a string with a length from 1 to 16384.",
+                    "required": false
+                },
+                {
+                    "name": "state",
+                    "type": "String",
+                    "info": "Check item state. One of: complete, incomplete, true, false.",
+                    "required": false
+                },
+                {
+                    "name": "idChecklist",
+                    "type": "String",
+                    "info": "Check item checklist id.",
+                    "required": false
+                },
+                {
+                    "name": "pos",
+                    "type": "String",
+                    "info": "Check item position. One of: top, bottom, or a positive number.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateCardCloseState",
+            "description": "Update a single card close state.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "info": "Card close state. One of: true, false.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateCardDescription",
+            "description": "Update a single card description.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Card description, a string with a length from 0 to 16384.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateCardDueDate",
+            "description": "Update a single card due date.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Card due date.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateCardDueComplete",
+            "description": "Update a single card due complete.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "info": "Card due complete. One of: true, false.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "setAttachmentAsCoverOfCard",
+            "description": "Set attachment as cover of card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Id of the image attachment of this card to use as its cover.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "setCardBoard",
+            "description": "Set card board.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Id of the board the card should be moved to.",
+                    "required": true
+                },
+                {
+                    "name": "idList",
+                    "type": "String",
+                    "info": "id of the list that the card should be moved to on the new board.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "setCardList",
+            "description": "Set card list.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Id of the list the card should be moved to.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "setCardMembers",
+            "description": "Set card members.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "A comma-separated list of objectIds, 24-character hex strings.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateCardName",
+            "description": "Update card name.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "Card name, a string with a length from 1 to 16384.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateCardPosition",
+            "description": "Update card position.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "A position. top, bottom, or a positive number.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateCardSingleSticker",
+            "description": "Update card single sticker.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "idSticker",
+                    "type": "String",
+                    "info": "The id of the sticker to modify.",
+                    "required": true
+                },
+                {
+                    "name": "top",
+                    "type": "String",
+                    "info": "Distance from top.",
+                    "required": false
+                },
+                {
+                    "name": "left",
+                    "type": "String",
+                    "info": "Distance from left.",
+                    "required": false
+                },
+                {
+                    "name": "zIndex",
+                    "type": "Number",
+                    "info": "Valid Z values for stickers, must be an integer.",
+                    "required": false
+                },
+                {
+                    "name": "rotate",
+                    "type": "Number",
+                    "info": "Rotation angle.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "updateCardSubscriptionState",
+            "description": "Update single card subscription state.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "info": "Card subscription state. One of: true, false.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "createCard",
+            "description": "Create new card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "idList",
+                    "type": "String",
+                    "info": "Id of the list that the card should be added to.",
+                    "required": true
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "The name of the new card.",
+                    "required": true
+                },
+                {
+                    "name": "desc",
+                    "type": "String",
+                    "info": "New card description, a string with a length from 0 to 16384.",
+                    "required": false
+                },
+                {
+                    "name": "pos",
+                    "type": "String",
+                    "info": "New card position. top, bottom, or a positive number.",
+                    "required": false
+                },
+                {
+                    "name": "due",
+                    "type": "String",
+                    "info": "Due date.",
+                    "required": false
+                },
+                {
+                    "name": "dueComplete",
+                    "type": "Boolean",
+                    "info": "Due complete. One of: true, false.",
+                    "required": false
+                },
+                {
+                    "name": "idMembers",
+                    "type": "String",
+                    "info": "A comma-separated list of objectIds, 24-character hex strings.",
+                    "required": false
+                },
+                {
+                    "name": "idLabels",
+                    "type": "String",
+                    "info": "A comma-separated list of objectIds, 24-character hex strings.",
+                    "required": false
+                },
+                {
+                    "name": "urlSource",
+                    "type": "String",
+                    "info": "New card url source. A URL starting with http:// or https://.",
+                    "required": false
+                },
+                {
+                    "name": "fileSource",
+                    "type": "String",
+                    "info": "New card file source.",
+                    "required": false
+                },
+                {
+                    "name": "idCardSource",
+                    "type": "String",
+                    "info": "The id of the card to copy into a new card.",
+                    "required": false
+                },
+                {
+                    "name": "keepFromSource",
+                    "type": "String",
+                    "info": "Comma-separated list of keep from source. One of: all, attachments, checklists, comments, due, labels, members, stickers.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "addCommentToCard",
+            "description": "Add new comment to card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "text",
+                    "type": "String",
+                    "info": "Text of comment, a string with a length from 1 to 16384.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "addAttachmentToCard",
+            "description": "Add attachment to card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "file",
+                    "type": "String",
+                    "info": "File for add.",
+                    "required": false
+                },
+                {
+                    "name": "url",
+                    "type": "String",
+                    "info": "File url to add. A URL starting with http:// or https://.",
+                    "required": false
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "Name of attachment, a string with a length from 0 to 256.",
+                    "required": false
+                },
+                {
+                    "name": "mimeType",
+                    "type": "String",
+                    "info": "Mime type of attachment, a string with a length from 0 to 256.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "createCardCheckItem",
+            "description": "Create card check item.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "idChecklist",
+                    "type": "String",
+                    "info": "The id of the checklist.",
+                    "required": true
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "New check item name, a string with a length from 1 to 16384.",
+                    "required": true
+                },
+                {
+                    "name": "pos",
+                    "type": "String",
+                    "info": "New check item position. One of: top, bottom, or a positive number.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "convertCardCheckItemToCard",
+            "description": "Convert card checkItem to card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "idChecklist",
+                    "type": "String",
+                    "info": "The id of the checklist.",
+                    "required": true
+                },
+                {
+                    "name": "idCheckItem",
+                    "type": "String",
+                    "info": "The id of the checkitem to modify.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "addChecklistToCard",
+            "description": "Add checklist to card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "The id of the checklist to add to the card, or null to create a new one.",
+                    "required": false
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "Name, a string with a length from 0 to 16384.",
+                    "required": false
+                },
+                {
+                    "name": "idChecklistSource",
+                    "type": "String",
+                    "info": "The id of the source checklist to copy into a new checklist.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "addCardLabel",
+            "description": "Add label to card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "The id of the label to add.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "addMemberToCard",
+            "description": "Add member to card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "The id of the member to add to the card.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "createCardLabels",
+            "description": "Create card labels.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "color",
+                    "type": "String",
+                    "info": "Label color name. One of: blue, green, orange, purple, red, yellow.",
+                    "required": true
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "Label name, a string with a length from 0 to 16384.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "markCardAssociatedNotificationsRead",
+            "description": "Mark card associated notifications as read.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "addMemberVoteToCard",
+            "description": "Add member vote to card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "value",
+                    "type": "String",
+                    "info": "The id of the member to vote 'yes' on the card.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "createCardSticker",
+            "description": "Create card sticker.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "image",
+                    "type": "String",
+                    "info": "Sticker image, a string with a length from 0 to 16384.",
+                    "required": true
+                },
+                {
+                    "name": "top",
+                    "type": "String",
+                    "info": "Distance from top.",
+                    "required": true
+                },
+                {
+                    "name": "left",
+                    "type": "String",
+                    "info": "Distance from left.",
+                    "required": true
+                },
+                {
+                    "name": "zIndex",
+                    "type": "Number",
+                    "info": "Valid Z values for stickers, must be an integer.",
+                    "required": true
+                },
+                {
+                    "name": "rotate",
+                    "type": "Number",
+                    "info": "Rotation angle.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "deleteCard",
+            "description": "Delete card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "deleteAttachmentFromCard",
+            "description": "Delete attachment from card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "idAttachment",
+                    "type": "String",
+                    "info": "The id of the attachment to remove from the card.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "deleteCardCheckItem",
+            "description": "Delete card check item.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "idChecklist",
+                    "type": "String",
+                    "info": "The id of the checklist.",
+                    "required": true
+                },
+                {
+                    "name": "idCheckItem",
+                    "type": "String",
+                    "info": "The id of the check item to remove.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "deleteCardCheckList",
+            "description": "Delete card check list.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "idChecklist",
+                    "type": "String",
+                    "info": "The id of the checklist to remove from the card.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "deleteLabelFromCard",
+            "description": "Delete label from card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "idLabel",
+                    "type": "String",
+                    "info": "The id of the label to delete.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "deleteMemberFromCard",
+            "description": "Delete member from card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "idMember",
+                    "type": "String",
+                    "info": "The id of the member to remove from the card.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "deleteMemberVoteFromCard",
+            "description": "Delete member vote from card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "idMember",
+                    "type": "String",
+                    "info": "The id of the member whose vote to rescind.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "deleteSingleStickerFromCard",
+            "description": "Delete single sticker from card.",
+            "args": [
+                {
+                    "name": "apiKeys",
+                    "type": "credentials",
+                    "info": "Your API keys credentials.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "cardIdOrShortlink",
+                    "type": "String",
+                    "info": "Card id or shortlink.",
+                    "required": true
+                },
+                {
+                    "name": "idSticker",
+                    "type": "String",
+                    "info": "The id of the sticker to remove.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
         }
     ]
 }

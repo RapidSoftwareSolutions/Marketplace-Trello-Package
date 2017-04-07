@@ -6,7 +6,10 @@ Connect to the Trello Project Management API to get data and update tasks on thi
 * Credentials: apiKeys
 
 ## How to get credentials: 
-0. 
+0. Sign up in [trello.com](https://trello.com/signup).
+1. Navigate to [Developer API Keys page](https://trello.com/app-key).
+2. Use Key as credentials apiKeys.
+3. With description on [Authorizing a Client](https://developers.trello.com/authorize) page you can generate accessToken. 
 
 ## Trello.getToken
 Find a token by identifier.
@@ -817,4 +820,596 @@ Delete board power up.
 | accessToken| String     | Access token.
 | boardId    | String     | The board identifier.
 | powerUp    | String     | Board power up. One of: calendar, cardAging, recap, voting.
+
+## Trello.getSingleCard
+Get a single card by id or shortlink.
+
+| Field                    | Type       | Description
+|--------------------------|------------|----------
+| apiKeys                  | credentials| Your API keys credentials.
+| accessToken              | String     | Access token.
+| cardIdOrShortlink        | String     | Card id or shortlink.
+| actions                  | String     | Comma-separated list of actions. One of: all, addAttachmentToCard, addChecklistToCard, addMemberToBoard, addMemberToCard, addMemberToOrganization, addToOrganizationBoard, commentCard, convertToCardFromCheckItem, copyBoard, copyCard, copyCommentCard, createBoard, createCard, createList, createOrganization, deleteAttachmentFromCard, deleteBoardInvitation, deleteCard, deleteOrganizationInvitation, disablePowerUp, emailCard, enablePowerUp, makeAdminOfBoard, makeNormalMemberOfBoard, makeNormalMemberOfOrganization, makeObserverOfBoard, memberJoinedTrello, moveCardFromBoard, moveCardToBoard, moveListFromBoard, moveListToBoard, removeChecklistFromCard, removeFromOrganizationBoard, removeMemberFromCard, unconfirmedBoardInvitation, unconfirmedOrganizationInvitation, updateBoard, updateCard, updateCard:closed, updateCard:desc, updateCard:idList, updateCard:name, updateCheckItemStateOnCard, updateChecklist, updateList, updateList:closed, updateList:name, updateMember, updateOrganization.
+| actionsEntities          | Boolean    | Actions entities. One of: true, false.
+| actionsDisplay           | Boolean    | Actions display. One of: true, false.
+| actionsLimit             | String     | Actions limit, a number from 0 to 1000.
+| actionFields             | String     | Comma-separated list of action fields. One of: all, data, date, idMemberCreator, type.
+| actionMemberCreatorFields| String     | Comma-separated list of action member creator fields. One of: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.
+| attachments              | String     | Attachments, one of: true, false, cover.
+| attachmentFields         | String     | Comma-separated list of attachment fields. One of: all, bytes, date, edgeColor, idMember, isUpload, mimeType, name, previews, url.
+| members                  | Boolean    | Members. One of: true, false.
+| memberFields             | String     | Comma-separated list of member fields. One of: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.
+| membersVoted             | Boolean    | Members voted. One of: true, false.
+| memberVotedFields        | String     | Comma-separated list of member voted fields. One of: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.
+| checkItemStates          | Boolean    | Check item states. One of: true, false.
+| checkItemStateFields     | String     | Comma-separated list of check item state fields. One of: all, idCheckItem, state.
+| checklists               | String     | Checklists. One of: all, none.
+| checklistFields          | String     | Comma-separated list of checklist fields. One of: all, idBoard, idCard, name, pos.
+| board                    | Boolean    | Board. One of: true, false.
+| boardFields              | String     | Comma-separated list of board fields. One of: all, closed, dateLastActivity, dateLastView, desc, descData, idOrganization, invitations, invited, labelNames, memberships, name, pinned, powerUps, prefs, shortLink, shortUrl, starred, subscribed, url.
+| list                     | Boolean    | List. One of: true, false.
+| listFields               | String     | Comma-separated list of list fields. One of: all, closed, idBoard, name, pos, subscribed.
+| pluginData               | Boolean    | Plugin data. One of: true, false.
+| stickers                 | Boolean    | Stickers. One of: true, false.
+| stickerFields            | String     | Comma-separated list of sticker fields. One of: all, image, imageScaled, imageUrl, left, rotate, top, zIndex.
+| fields                   | String     | Comma-separated list of fields. One of: all, badges, checkItemStates, closed, dateLastActivity, desc, descData, due, dueComplete, email, idAttachmentCover, idBoard, idChecklists, idLabels, idList, idMembers, idMembersVoted, idShort, labels, manualCoverAttachment, name, pos, shortLink, shortUrl, subscribed, url.
+
+## Trello.getCardActions
+Get a single card actions.
+
+| Field              | Type       | Description
+|--------------------|------------|----------
+| apiKeys            | credentials| Your API keys credentials.
+| accessToken        | String     | Access token.
+| cardIdOrShortlink  | String     | Card id or shortlink.
+| entities           | Boolean    | Actions entities. One of: true, false.
+| display            | Boolean    | Actions display. One of: true, false.
+| filter             | String     | Comma-separated list of actions. One of: all, addAttachmentToCard, addChecklistToCard, addMemberToBoard, addMemberToCard, addMemberToOrganization, addToOrganizationBoard, commentCard, convertToCardFromCheckItem, copyBoard, copyCard, copyCommentCard, createBoard, createCard, createList, createOrganization, deleteAttachmentFromCard, deleteBoardInvitation, deleteCard, deleteOrganizationInvitation, disablePowerUp, emailCard, enablePowerUp, makeAdminOfBoard, makeNormalMemberOfBoard, makeNormalMemberOfOrganization, makeObserverOfBoard, memberJoinedTrello, moveCardFromBoard, moveCardToBoard, moveListFromBoard, moveListToBoard, removeChecklistFromCard, removeFromOrganizationBoard, removeMemberFromCard, unconfirmedBoardInvitation, unconfirmedOrganizationInvitation, updateBoard, updateCard, updateCard:closed, updateCard:desc, updateCard:idList, updateCard:name, updateCheckItemStateOnCard, updateChecklist, updateList, updateList:closed, updateList:name, updateMember, updateOrganization.
+| fields             | String     | Comma-separated list of action fields. One of: all, data, date, idMemberCreator, type.
+| limit              | String     | Actions limit, a number from 0 to 1000.
+| format             | String     | Format, one of: count, list, minimal.
+| since              | String     | Since, a date, null or lastView.
+| before             | String     | Before, a date, or null.
+| idModels           | String     | Return actions related to these model ids.
+| member             | Boolean    | Member. One of: true, false.
+| memberFields       | String     | Comma-separated list of member fields. One of: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.
+| memberCreator      | Boolean    | Member creator. One of: true, false.
+| memberCreatorFields| String     | Comma-separated list of action member creator fields. One of: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.
+
+## Trello.getCardAttachments
+Get a single card attachments.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| fields           | String     | Comma-separated list of attachment fields. One of: all, bytes, date, edgeColor, idMember, isUpload, mimeType, name, previews, url.
+| filter           | String     | Attachments filter, one of: true, false, cover.
+
+## Trello.getCardSingleAttachment
+Get a single attachments of single card.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| idAttachment     | String     | The id of the attachment.
+| fields           | String     | Comma-separated list of attachment fields. One of: all, bytes, date, edgeColor, idMember, isUpload, mimeType, name, previews, url.
+
+## Trello.getCardBoard
+Get a single attachments of single card.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| fields           | String     | Comma-separated list of card board fields. One of: all, closed, dateLastActivity, dateLastView, desc, descData, idOrganization, invitations, invited, labelNames, memberships, name, pinned, powerUps, prefs, shortLink, shortUrl, starred, subscribed, url.
+
+## Trello.getCardChecklistItemStates
+Get a single card checklist item states.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| fields           | String     | Comma-separated list of fields. One of: all, idCheckItem, state.
+
+## Trello.getCardChecklists
+Get a single card checklists.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| cards            | String     | Cards, one of: all, closed, none, open, visible.
+| cardFields       | String     | Comma-separated list of card fields. One of: all, badges, checkItemStates, closed, dateLastActivity, desc, descData, due, dueComplete, email, idAttachmentCover, idBoard, idChecklists, idLabels, idList, idMembers, idMembersVoted, idShort, labels, manualCoverAttachment, name, pos, shortLink, shortUrl, subscribed, url.
+| checkItems       | String     | Check items. One of: all, none.
+| checkItemFields  | String     | Check item fields. One of: name, nameData, pos, state, type.
+| filter           | String     | Filter. One of: all, none.
+| fields           | String     | Comma-separated list of fields. One of: all, idBoard, idCard, name, pos.
+
+## Trello.getCardSingleCheckItem
+Get a single check item of single card.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| idCheckItem      | String     | Id of the checkitem to retrieve.
+| fields           | String     | Check item fields. One of: all, name, nameData, pos, state, type.
+
+## Trello.getCardList
+Get a single card list.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| fields           | String     | Card list fields. One of: all, closed, idBoard, name, pos, subscribed.
+
+## Trello.getCardMembers
+Get a single card members.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| fields           | String     | Card list fields. One of: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.
+
+## Trello.getMemberVoteToCard
+Get a member vote of a single card.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| fields           | String     | Card list fields. One of: all, avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username.
+
+## Trello.getCardStickers
+Get a single card stickers.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| fields           | String     | Card sticker fields. One of: all, image, imageScaled, imageUrl, left, rotate, top, zIndex.
+
+## Trello.getCardSingleSticker
+Get a single sticker of a single card.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| idSticker        | String     | Card sticker id.
+| fields           | String     | Card sticker fields. One of: all, image, imageScaled, imageUrl, left, rotate, top, zIndex.
+
+## Trello.updateSingleCard
+Update a single card.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| name             | String     | Name of single card, a string with a length from 1 to 16384.
+| desc             | String     | Description of single card, a string with a length from 0 to 16384.
+| closed           | Boolean    | Is closed. One of: true, false.
+| idMembers        | String     | A comma-separated list of objectIds, 24-character hex strings.
+| idAttachmentCover| String     | Id of the image attachment of this card to use as its cover.
+| idList           | String     | Id of the list the card should be moved to.
+| idLabels         | String     | A comma-separated list of objectIds, 24-character hex strings.
+| idBoard          | String     | Id of the board the card should be moved to.
+| pos              | String     | A position. top, bottom, or a positive number.
+| due              | String     | Due a date.
+| dueComplete      | Boolean    | Is due complete. One of: true, false.
+| subscribed       | Boolean    | Is subscribed. One of: true, false.
+
+## Trello.updateCardCheckItemName
+Update a single card check item name.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| idChecklist      | String     | The id of the checklist.
+| idCheckItem      | String     | The id of the checkitem to modify.
+| value            | String     | Check item name, a string with a length from 1 to 16384.
+
+## Trello.updateCardCheckItemPos
+Update a single card check item position.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| idChecklist      | String     | The id of the checklist.
+| idCheckItem      | String     | The id of the checkitem to modify.
+| value            | String     | Check item position. One of: top, bottom, or a positive number.
+
+## Trello.updateCardCheckItemState
+Update a single card check item state.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| idChecklist      | String     | The id of the checklist.
+| idCheckItem      | String     | The id of the checkitem to modify.
+| value            | String     | Check item state. One of: complete, incomplete, true, false.
+
+## Trello.updateCardCheckItem
+Update a single card check item.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| idCheckItem      | String     | The id of the checkitem to modify.
+| name             | String     | Check item name, a string with a length from 1 to 16384.
+| state            | String     | Check item state. One of: complete, incomplete, true, false.
+| idChecklist      | String     | Check item checklist id.
+| pos              | String     | Check item position. One of: top, bottom, or a positive number.
+
+## Trello.updateCardCloseState
+Update a single card close state.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| value            | Boolean    | Card close state. One of: true, false.
+
+## Trello.updateCardDescription
+Update a single card description.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| value            | String     | Card description, a string with a length from 0 to 16384.
+
+## Trello.updateCardDueDate
+Update a single card due date.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| value            | String     | Card due date.
+
+## Trello.updateCardDueComplete
+Update a single card due complete.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| value            | Boolean    | Card due complete. One of: true, false.
+
+## Trello.setAttachmentAsCoverOfCard
+Set attachment as cover of card.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| value            | String     | Id of the image attachment of this card to use as its cover.
+
+## Trello.setCardBoard
+Set card board.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| value            | String     | Id of the board the card should be moved to.
+| idList           | String     | id of the list that the card should be moved to on the new board.
+
+## Trello.setCardList
+Set card list.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| value            | String     | Id of the list the card should be moved to.
+
+## Trello.setCardMembers
+Set card members.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| value            | String     | A comma-separated list of objectIds, 24-character hex strings.
+
+## Trello.updateCardName
+Update card name.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| value            | String     | Card name, a string with a length from 1 to 16384.
+
+## Trello.updateCardPosition
+Update card position.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| value            | String     | A position. top, bottom, or a positive number.
+
+## Trello.updateCardSingleSticker
+Update card single sticker.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| idSticker        | String     | The id of the sticker to modify.
+| top              | String     | Distance from top.
+| left             | String     | Distance from left.
+| zIndex           | Number     | Valid Z values for stickers, must be an integer.
+| rotate           | Number     | Rotation angle.
+
+## Trello.updateCardSubscriptionState
+Update single card subscription state.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| value            | Boolean    | Card subscription state. One of: true, false.
+
+## Trello.createCard
+Create new card.
+
+| Field         | Type       | Description
+|---------------|------------|----------
+| apiKeys       | credentials| Your API keys credentials.
+| accessToken   | String     | Access token.
+| idList        | String     | Id of the list that the card should be added to.
+| name          | String     | The name of the new card.
+| desc          | String     | New card description, a string with a length from 0 to 16384.
+| pos           | String     | New card position. top, bottom, or a positive number.
+| due           | String     | Due date.
+| dueComplete   | Boolean    | Due complete. One of: true, false.
+| idMembers     | String     | A comma-separated list of objectIds, 24-character hex strings.
+| idLabels      | String     | A comma-separated list of objectIds, 24-character hex strings.
+| urlSource     | String     | New card url source. A URL starting with http:// or https://.
+| fileSource    | String     | New card file source.
+| idCardSource  | String     | The id of the card to copy into a new card.
+| keepFromSource| String     | Comma-separated list of keep from source. One of: all, attachments, checklists, comments, due, labels, members, stickers.
+
+## Trello.addCommentToCard
+Add new comment to card.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| text             | String     | Text of comment, a string with a length from 1 to 16384.
+
+## Trello.addAttachmentToCard
+Add attachment to card.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| file             | String     | File for add.
+| url              | String     | File url to add. A URL starting with http:// or https://.
+| name             | String     | Name of attachment, a string with a length from 0 to 256.
+| mimeType         | String     | Mime type of attachment, a string with a length from 0 to 256.
+
+## Trello.createCardCheckItem
+Create card check item.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| idChecklist      | String     | The id of the checklist.
+| name             | String     | New check item name, a string with a length from 1 to 16384.
+| pos              | String     | New check item position. One of: top, bottom, or a positive number.
+
+## Trello.convertCardCheckItemToCard
+Convert card checkItem to card.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| idChecklist      | String     | The id of the checklist.
+| idCheckItem      | String     | The id of the checkitem to modify.
+
+## Trello.addChecklistToCard
+Add checklist to card.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| value            | String     | The id of the checklist to add to the card, or null to create a new one.
+| name             | String     | Name, a string with a length from 0 to 16384.
+| idChecklistSource| String     | The id of the source checklist to copy into a new checklist.
+
+## Trello.addCardLabel
+Add label to card.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| value            | String     | The id of the label to add.
+
+## Trello.addMemberToCard
+Add member to card.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| value            | String     | The id of the member to add to the card.
+
+## Trello.createCardLabels
+Create card labels.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| color            | String     | Label color name. One of: blue, green, orange, purple, red, yellow.
+| name             | String     | Label name, a string with a length from 0 to 16384.
+
+## Trello.markCardAssociatedNotificationsRead
+Mark card associated notifications as read.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+
+## Trello.addMemberVoteToCard
+Add member vote to card.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| value            | String     | The id of the member to vote 'yes' on the card.
+
+## Trello.createCardSticker
+Create card sticker.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| image            | String     | Sticker image, a string with a length from 0 to 16384.
+| top              | String     | Distance from top.
+| left             | String     | Distance from left.
+| zIndex           | Number     | Valid Z values for stickers, must be an integer.
+| rotate           | Number     | Rotation angle.
+
+## Trello.deleteCard
+Delete card.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+
+## Trello.deleteAttachmentFromCard
+Delete attachment from card.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| idAttachment     | String     | The id of the attachment to remove from the card.
+
+## Trello.deleteCardCheckItem
+Delete card check item.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| idChecklist      | String     | The id of the checklist.
+| idCheckItem      | String     | The id of the check item to remove.
+
+## Trello.deleteCardCheckList
+Delete card check list.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| idChecklist      | String     | The id of the checklist to remove from the card.
+
+## Trello.deleteLabelFromCard
+Delete label from card.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| idLabel          | String     | The id of the label to delete.
+
+## Trello.deleteMemberFromCard
+Delete member from card.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| idMember         | String     | The id of the member to remove from the card.
+
+## Trello.deleteMemberVoteFromCard
+Delete member vote from card.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| idMember         | String     | The id of the member whose vote to rescind.
+
+## Trello.deleteSingleStickerFromCard
+Delete single sticker from card.
+
+| Field            | Type       | Description
+|------------------|------------|----------
+| apiKeys          | credentials| Your API keys credentials.
+| accessToken      | String     | Access token.
+| cardIdOrShortlink| String     | Card id or shortlink.
+| idSticker        | String     | The id of the sticker to remove.
 

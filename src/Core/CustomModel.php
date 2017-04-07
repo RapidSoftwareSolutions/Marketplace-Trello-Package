@@ -11,7 +11,12 @@ if ( ! defined( 'RAPID_IN' ) ) exit( 'No direct script access allowed' );
  */
 class CustomModel
 {
-    public static function example($param, &$blockCustom, &$vendorUrl){
+    public static function createCard($param, &$blockCustom, &$vendorUrl){
+        $result = $param;
+
+        return $result;
+    }
+    public static function addAttachmentToCard($param, &$blockCustom, &$vendorUrl){
         $result = $param;
 
         return $result;
