@@ -4287,7 +4287,7 @@ return array (
                 ),
                 array (
                     'name' => 'fileSource',
-                    'type' => 'String',
+                    'type' => 'File',
                     'info' => 'New card file source.',
                     'required' => false,
                 ),
@@ -4358,15 +4358,15 @@ return array (
                     'required' => true,
                 ),
                 array (
-                    'name' => 'file',
-                    'type' => 'String',
-                    'info' => 'File for add.',
-                    'required' => false,
-                ),
-                array (
                     'name' => 'url',
                     'type' => 'String',
                     'info' => 'File url to add. A URL starting with http:// or https://.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'file',
+                    'type' => 'File',
+                    'info' => 'File to add.',
                     'required' => false,
                 ),
                 array (
@@ -6142,13 +6142,12 @@ return array (
                 'idMembers' => 'idMembers',
                 'idLabels' => 'idLabels',
                 'urlSource' => 'urlSource',
-                'fileSource' => 'fileSource',
+                'fileSource' => 'urlSource',
                 'idCardSource' => 'idCardSource',
                 'keepFromSource' => 'keepFromSource',
             ),
             'vendorUrl' => 'https://api.trello.com/1/cards',
             'method' => 'POST',
-            'custom' => true,
         ),
         'addCommentToCard' => array (
             'dictionary' => array (
@@ -6165,14 +6164,13 @@ return array (
                 'apiKeys' => 'apiKeys',
                 'accessToken' => 'accessToken',
                 'cardIdOrShortlink' => 'cardIdOrShortlink',
-                'file' => 'file',
                 'url' => 'url',
+                'file' => 'url',
                 'name' => 'name',
                 'mimeType' => 'mimeType',
             ),
             'vendorUrl' => 'https://api.trello.com/1/cards/{{cardIdOrShortlink}}/attachments',
             'method' => 'POST',
-            'custom' => true,
         ),
         'createCardCheckItem' => array (
             'dictionary' => array (

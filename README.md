@@ -1207,7 +1207,7 @@ Create new card.
 | idMembers     | String     | A comma-separated list of objectIds, 24-character hex strings.
 | idLabels      | String     | A comma-separated list of objectIds, 24-character hex strings.
 | urlSource     | String     | New card url source. A URL starting with http:// or https://.
-| fileSource    | String     | New card file source.
+| fileSource    | File       | New card file source.
 | idCardSource  | String     | The id of the card to copy into a new card.
 | keepFromSource| String     | Comma-separated list of keep from source. One of: all, attachments, checklists, comments, due, labels, members, stickers.
 
@@ -1229,8 +1229,8 @@ Add attachment to card.
 | apiKeys          | credentials| Your API keys credentials.
 | accessToken      | String     | Access token.
 | cardIdOrShortlink| String     | Card id or shortlink.
-| file             | String     | File for add.
 | url              | String     | File url to add. A URL starting with http:// or https://.
+| file             | File       | File for add.
 | name             | String     | Name of attachment, a string with a length from 0 to 256.
 | mimeType         | String     | Mime type of attachment, a string with a length from 0 to 256.
 
