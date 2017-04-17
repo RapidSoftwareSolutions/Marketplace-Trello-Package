@@ -26,7 +26,7 @@ class Router
         $this->custom = $custom;
         $this->klein = new \Klein\Klein();
         $this->http = new \GuzzleHttp\Client(['verify' => false]);
-        $this->supportedMethods = ['GET', 'POST', 'PUT', 'DELETE'];
+        $this->supportedMethods = ['GET', 'POST', 'POST-RAW', 'PUT', 'DELETE'];
     }
 
     public function setup()
@@ -145,7 +145,7 @@ class Router
 
             // If need, custom make custom processing for route
             if(isset($blockCustom['custom'])&&$blockCustom['custom'] == true){
-                $sendBody = CustomModel::$blockName($sendParam, $this->custom[$blockName], $vendorUrl);
+                $sendBody = CustomModel::$blockName($sendParam, $this->custom[$blockName], $vendorUrl, $apiKeys, $accessToken);
             }else{
                 $sendBody = json_encode($sendBody, JSON_UNESCAPED_SLASHES);
             }
@@ -311,6 +311,9 @@ class Router
                     $sendBody = json_decode($sendBody, true);
                 }
                 $clientSetup['query'] = array_merge($clientSetup['query'], $sendBody);
+            }elseif($method == 'POST-RAW'){
+                $clientSetup = $sendBody;
+                $method = 'POST';
             }else{
                 if(!is_string($sendBody)){
                     $sendBody = json_encode($sendBody, JSON_UNESCAPED_SLASHES);
