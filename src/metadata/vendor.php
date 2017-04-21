@@ -12608,7 +12608,7 @@ return array (
                 'accessToken' => 'accessToken',
                 'idNotification' => 'idNotification',
             ),
-            'vendorUrl' => 'https://api.trello.com/1/notifications/{{idNotification}}/entitieslink',
+            'vendorUrl' => 'https://api.trello.com/1/notifications/{{idNotification}}/entities',
             'method' => 'GET',
         ),
         'getNotificationList' => array (
