@@ -1381,7 +1381,7 @@
                     "name": "limit",
                     "type": "String",
                     "info": "Limit, a number from 0 to 1000.",
-                    "required": true
+                    "required": false
                 }
             ],
             "callbacks": [

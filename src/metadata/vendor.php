@@ -1175,7 +1175,7 @@ return array (
                     'name' => 'limit',
                     'type' => 'String',
                     'info' => 'Limit, a number from 0 to 1000.',
-                    'required' => true,
+                    'required' => false,
                 ),
             ),
         ),
@@ -11478,7 +11478,7 @@ return array (
                 'name' => 'name',
                 'idChecklistSource' => 'idChecklistSource',
             ),
-            'vendorUrl' => 'https://api.trello.com/1/cards/{{cardIdOrShortlink}}/checklist',
+            'vendorUrl' => 'https://api.trello.com/1/cards/{{cardIdOrShortlink}}/checklists',
             'method' => 'POST',
         ),
         'addCardLabel' => array (
