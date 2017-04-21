@@ -10836,7 +10836,7 @@ return array (
                 'boardId' => 'boardId',
                 'value' => 'value',
             ),
-            'vendorUrl' => 'https://api.trello.com/1/boards/{{boardId}}/myPrefs/background',
+            'vendorUrl' => 'https://api.trello.com/1/boards/{{boardId}}/prefs/background',
             'method' => 'PUT',
         ),
         'updateCalendarFeedEnableState' => array (
