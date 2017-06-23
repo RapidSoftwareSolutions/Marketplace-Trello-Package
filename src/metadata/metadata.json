@@ -50,7 +50,7 @@
                 }
             ]
         }
-    ]
+    ],
     "blocks": [
         {
             "name": "getToken",
