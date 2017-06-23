@@ -37,6 +37,26 @@ class Router
             include_once dirname(__DIR__) . '/metadata/metadata.json';
         });
         // Set all routes
+
+        $this->klein->respond('POST', INDEX_PATH.'api/Trello/webhookEvent', function ($request, $response){
+
+            $requestBody = file_get_contents('php://input');
+            $requestBody = $this->normalizeJson($requestBody);
+            $requestBody = str_replace('\"', '"', $requestBody);
+            $requestBody = json_decode($requestBody, true);
+            $reply = [
+                "http_resp" => '',
+                "client_msg" => $requestBody['args']['body'],
+                "params" => $requestBody['args']['params']
+            ];
+
+            $result['callback'] = 'success';
+            $result['contextWrites']['to'] = $reply;
+            echo json_encode($result);
+            exit(200);
+
+        });
+
         foreach($this->blocks as $blockSettings){
             $this->setRoute($blockSettings);
         }
