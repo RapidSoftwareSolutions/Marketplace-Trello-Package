@@ -11,6 +11,18 @@ Connect to the Trello Project Management API to get data and update tasks on thi
 2. Use Key as credentials apiKeys.
 3. With description on [Authorizing a Client](https://developers.trello.com/authorize) page you can generate accessToken. 
 
+ ## Webhook credentials
+ Please use SDK to test this feature.
+ 0. Go to [RapidAPI](http://rapidapi.com)
+ 1. Log in or create an account
+ 2. Go to [My apps](https://dashboard.rapidapi.com/projects)
+ 3. Add new project with projectName to get your project Key
+ 
+ | Field      | Type       | Description
+ |------------|------------|----------
+ | projectName     | credentials| Your RapidAPI project name
+ | projectKey | credentials     | Your RapidAPI project key
+
 ## Trello.getToken
 Find a token by identifier.
 
@@ -104,6 +116,10 @@ Get single webhook by identifier.
 
 ## Trello.createWebhook
 Create a webhook.
+You can use our service as callbackURL: 
+```
+https://webhooks.rapidapi.com/api/message/Intercom/webhookEvent/{projectName}/{projectKey} * see credentials description above
+```
 
 | Field      | Type       | Description
 |------------|------------|----------
