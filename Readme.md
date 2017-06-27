@@ -2892,4 +2892,3 @@ Search members in your Trello account.
 | idBoard       | String     | Board identifier.
 | idOrganization| String     | Organization identifier.
 | onlyOrgMembers| Boolean    | Search only organization members, one of: true, false.
-

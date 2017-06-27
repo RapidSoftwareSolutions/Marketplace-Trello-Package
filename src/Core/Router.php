@@ -38,7 +38,7 @@ class Router
         });
         // Set all routes
 
-        $this->klein->respond('POST', INDEX_PATH.'api/Trello/webhookEvent', function ($request, $response){
+        $this->klein->respond('POST', INDEX_PATH.'api/Trello/webhookEvent', function (){
 
             $requestBody = file_get_contents('php://input');
             $requestBody = $this->normalizeJson($requestBody);
@@ -82,6 +82,7 @@ class Router
 
     private function setRoute($block)
     {
+
         // Get method for vendor route
         if(
             isset($this->custom[$block['name']]['method'])&&
@@ -103,9 +104,10 @@ class Router
         $blockCustom = $this->custom[$block['name']];
 
         // Add route
-        $this->klein->respond('POST', $routePath, function()use($param, $blockName, $blockCustom, $method){
+        $this->klein->respond('POST', $routePath, function() use($param, $blockName, $blockCustom, $method){
             // Get input param
             $inputPram = $this->getInputPram($param['param']);
+
             if(is_string($inputPram)){
                 echo $inputPram;
                 exit(200);
@@ -231,6 +233,15 @@ class Router
                     }
                 }else{
                     $param[$oneParam] = null;
+                }
+            }
+
+            $listField = ["fields","actions","actionFields","actionMemberFields","actionMemberCreatorFields","cardFields","cardAttachmentFields","labelFields","listFields","memberships","membershipsMemberFields","memberFields","membersInvitedFields","organizationFields","filter","attachmentFields","checkItemStateFields","checkItemFields","boardFields","memberVotedFields","checklistFields","stickerFields","memberCreatorFields","idLabels","keepFromSource","cardMemberFields","boardActions","boardActionFields","boardOrganizationFields","boardsInvitedFields","organizationsInvitedFields","notifications","modelTypes"];
+
+            foreach ($listField as $item)
+            {
+                if(!empty($param[$item]) && is_array($param[$item])){
+                    $param[$item] = implode(",",$param[$item]);
                 }
             }
 
