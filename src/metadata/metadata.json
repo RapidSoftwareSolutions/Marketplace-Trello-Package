@@ -22,7 +22,7 @@
     },
     "events": [{
         "name": "webhookEvent",
-        "description": "This method is called every time a Trello webhook event happens",
+        "description": "This method is called every time a Trello webhook event occurs",
         "payload": {
             "list_folder": {
                 "accounts": [
@@ -37,8 +37,9 @@
             }
         },
         "steps": [
-            "Go to add createWebhook block",
-            "Set webhookUrl to __WEBHOOK_URL__"
+            "Navigate to https://trello.com/app-key to get an API key and generate a token",
+            "To access the idModel of your card or board, go to the board or card you want to track within the trello website and add .json to the URL. Ex/ https://trello.com/c/DcqBrqdx/1-target-card.json. You can read more about this process at https://developers.trello.com/get-started/start-building",
+            "Navigate to https://rapidapi.com/package/Trello/functions/createWebhook, input your token from step 1, your idModel from step 2, and the following URL: __WEBHOOK_URL__"
         ],
         "args": [{
             "name": "token",
