@@ -6,17 +6,17 @@ Connect to the Trello Project Management API to get data and update tasks on thi
 * Credentials: apiKeys
 
 ## How to get credentials: 
-0. Sign up in [trello.com](https://trello.com/signup).
-1. Navigate to [Developer API Keys page](https://trello.com/app-key).
-2. Use Key as credentials apiKeys.
-3. With description on [Authorizing a Client](https://developers.trello.com/authorize) page you can generate accessToken. 
+1. Sign up in [trello.com](https://trello.com/signup).
+2. Navigate to [Developer API Keys page](https://trello.com/app-key).
+3. Use Key as credentials apiKeys.
+4. With description on [Authorizing a Client](https://developers.trello.com/authorize) page you can generate accessToken. 
 
  ## Webhook credentials
  Please use SDK to test this feature.
- 0. Go to [RapidAPI](http://rapidapi.com)
- 1. Log in or create an account
- 2. Go to [My apps](https://dashboard.rapidapi.com/projects)
- 3. Add new project with projectName to get your project Key
+ 1. Go to [RapidAPI](http://rapidapi.com)
+ 2. Log in or create an account
+ 3. Go to [My apps](https://dashboard.rapidapi.com/projects)
+ 4. Add new project with projectName to get your project Key
  
  | Field      | Type       | Description
  |------------|------------|----------
