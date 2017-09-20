@@ -6,7 +6,7 @@ Connect to the Trello Project Management API to get data and update tasks on thi
 * Credentials: apiKeys
 
 ## How to get credentials: 
-1. Sign up in [trello.com](https://trello.com/signup).
+1. Log in or sign up at [trello.com](https://trello.com/).
 2. Navigate to [Developer API Keys page](https://trello.com/app-key).
 3. Use Key as credentials apiKeys.
 4. With description on [Authorizing a Client](https://developers.trello.com/authorize) page you can generate accessToken. 
