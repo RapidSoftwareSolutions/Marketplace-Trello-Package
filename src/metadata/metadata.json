@@ -52,7 +52,7 @@
         "Sign up in trello.com",
         "Navigate to Developer API Keys page (https://trello.com/app-key)",
         "Use Key as credentials apiKeys",
-        "With description on Authorizing a Client page (https://developers.trello.com/authorize) you can generate accessToken",
+        "With description on Authorizing a Client page (https://developers.trello.com/authorize) you can generate accessToken"
     ],
     "blocks": [{
         "name": "getToken",
